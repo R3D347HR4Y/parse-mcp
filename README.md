@@ -1,6 +1,9 @@
 # Parse MCP Server 🗄️
 
 An [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that enables AI agents to interact with [Parse Server](https://github.com/parse-community/parse-server) instances. Explore databases, query classes, troubleshoot issues, and safely modify data through natural language.
+By Eliott Guillaumin
+
+[![Node Version](https://img.shields.io/badge/nodejs-18,_20,_22,_24-green.svg?logo=node.js&style=flat)](https://nodejs.org)
 
 ## Features
 

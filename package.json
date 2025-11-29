@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "MCP Server for AI agents to interact with Parse Server instances - explore databases, query classes, troubleshoot, and safely modify data",
   "main": "dist/index.js",
+  "homepage": "https://github.com/R3D347HR4Y/parse-mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/R3D347HR4Y/parse-mcp.git"
+  },
   "type": "module",
   "bin": {
     "parse-mcp-server": "./dist/index.js"
@@ -23,7 +28,7 @@
     "database",
     "model-context-protocol"
   ],
-  "author": "",
+  "author": "Eliott Guillaumin",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
