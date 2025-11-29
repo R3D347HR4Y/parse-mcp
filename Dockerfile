@@ -6,15 +6,13 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files
+# Copy package files and source
 COPY package*.json ./
 COPY tsconfig.json ./
-
-# Install dependencies (including devDependencies for build)
-RUN npm ci
-
-# Copy source code
 COPY src/ ./src/
+
+# Install dependencies (skip prepare to avoid build before source is ready)
+RUN npm ci --ignore-scripts
 
 # Build TypeScript
 RUN npm run build
@@ -31,8 +29,8 @@ RUN addgroup -g 1001 -S mcpuser && \
 # Copy package files
 COPY package*.json ./
 
-# Install production dependencies only
-RUN npm ci --omit=dev && \
+# Install production dependencies only (skip prepare script since we copy pre-built files)
+RUN npm ci --omit=dev --ignore-scripts && \
     npm cache clean --force
 
 # Copy built files from builder
@@ -64,6 +62,11 @@ CMD ["node", "dist/index.js"]
 
 # Labels
 LABEL org.opencontainers.image.title="Parse MCP Server"
-LABEL org.opencontainers.image.description="MCP Server for AI agents to interact with Parse Server instances"
-LABEL org.opencontainers.image.source="https://github.com/your-org/parse-mcp-server"
+LABEL org.opencontainers.image.description="MCP Server for AI agents to interact with Parse Server instances - explore databases, query classes, troubleshoot, and safely modify data"
+LABEL org.opencontainers.image.source="https://github.com/R3D347HR4Y/parse-mcp"
+LABEL org.opencontainers.image.url="https://github.com/R3D347HR4Y/parse-mcp"
+LABEL org.opencontainers.image.documentation="https://github.com/R3D347HR4Y/parse-mcp#readme"
+LABEL org.opencontainers.image.vendor="Eliott Guillaumin"
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.version="1.0.0"
 

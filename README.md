@@ -1,9 +1,13 @@
 # Parse MCP Server 🗄️
 
 An [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that enables AI agents to interact with [Parse Server](https://github.com/parse-community/parse-server) instances. Explore databases, query classes, troubleshoot issues, and safely modify data through natural language.
-By Eliott Guillaumin
 
-[![Node Version](https://img.shields.io/badge/nodejs-18,_20,_22,_24-green.svg?logo=node.js&style=flat)](https://nodejs.org)
+By **Eliott Guillaumin**
+
+[![Docker Hub](https://img.shields.io/docker/v/purpleshow/parse-mcp-server?label=Docker%20Hub&logo=docker&sort=semver)](https://hub.docker.com/r/purpleshow/parse-mcp-server)
+[![Docker Pulls](https://img.shields.io/docker/pulls/purpleshow/parse-mcp-server?logo=docker)](https://hub.docker.com/r/purpleshow/parse-mcp-server)
+[![GitHub](https://img.shields.io/github/license/R3D347HR4Y/parse-mcp)](https://github.com/R3D347HR4Y/parse-mcp/blob/main/LICENSE)
+[![Node Version](https://img.shields.io/badge/node-18%2B-green.svg?logo=node.js)](https://nodejs.org)
 
 ## Features
 
@@ -27,15 +31,21 @@ By Eliott Guillaumin
 ### Installation
 
 ```bash
-# Clone or download the project
-git clone https://github.com/your-org/parse-mcp-server.git
-cd parse-mcp-server
+# Clone the repository
+git clone https://github.com/R3D347HR4Y/parse-mcp.git
+cd parse-mcp
 
 # Install dependencies
 npm install
 
 # Build
 npm run build
+```
+
+**Or use Docker (recommended):**
+
+```bash
+docker pull purpleshow/parse-mcp-server:latest
 ```
 
 ### Environment Variables
@@ -148,11 +158,11 @@ node dist/index.js
 
 ### Docker Deployment
 
-Build and run with Docker (no docker-compose needed):
+Use the pre-built image from Docker Hub:
 
 ```bash
-# Build the image
-docker build -t parse-mcp-server .
+# Pull the image
+docker pull purpleshow/parse-mcp-server:latest
 
 # Run in HTTP mode (default) - exposes port 3000
 docker run -d \
@@ -160,10 +170,16 @@ docker run -d \
   -e PARSE_SERVER_URL="https://your-parse-server.com/parse" \
   -e PARSE_APP_ID="your-app-id" \
   -e PARSE_MASTER_KEY="your-master-key" \
-  parse-mcp-server
+  purpleshow/parse-mcp-server:latest
 
 # The MCP server is now available at http://localhost:3000/mcp
 # Health check: http://localhost:3000/health
+```
+
+Or build from source:
+
+```bash
+docker build -t parse-mcp-server .
 ```
 
 #### Using Docker with stdio mode (for Cursor/Claude)
@@ -187,7 +203,7 @@ For local IDE integration via stdio:
         "PARSE_APP_ID=your-app-id",
         "-e",
         "PARSE_MASTER_KEY=your-master-key",
-        "parse-mcp-server"
+        "purpleshow/parse-mcp-server:latest"
       ]
     }
   }
@@ -493,11 +509,16 @@ npm start
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit issues and pull requests.
+Contributions are welcome! Please feel free to submit [issues](https://github.com/R3D347HR4Y/parse-mcp/issues) and [pull requests](https://github.com/R3D347HR4Y/parse-mcp/pulls).
 
 ## License
 
-MIT
+[MIT](LICENSE)
+
+## Links
+
+- **GitHub**: [https://github.com/R3D347HR4Y/parse-mcp](https://github.com/R3D347HR4Y/parse-mcp)
+- **Docker Hub**: [https://hub.docker.com/r/purpleshow/parse-mcp-server](https://hub.docker.com/r/purpleshow/parse-mcp-server)
 
 ## Related Projects
 
