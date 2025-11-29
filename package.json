@@ -1,0 +1,46 @@
+{
+  "name": "parse-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server for AI agents to interact with Parse Server instances - explore databases, query classes, troubleshoot, and safely modify data",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "parse-mcp-server": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "parse-server",
+    "parse",
+    "baas",
+    "ai",
+    "agent",
+    "database",
+    "model-context-protocol"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "parse": "^5.3.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "@types/parse": "^3.0.9",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
