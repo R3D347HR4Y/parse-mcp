@@ -16,7 +16,8 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "release": "./scripts/release.sh"
   },
   "keywords": [
     "mcp",

@@ -33,3 +33,7 @@ Thumbs.db
 *.spec.ts
 coverage/
 
+# Scripts and CI
+scripts/
+.github/
+
