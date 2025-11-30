@@ -1,6 +1,6 @@
 {
   "name": "parse-mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP Server for AI agents to interact with Parse Server instances - explore databases, query classes, troubleshoot, and safely modify data",
   "main": "dist/index.js",
   "homepage": "https://github.com/R3D347HR4Y/parse-mcp",

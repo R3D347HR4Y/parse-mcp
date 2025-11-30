@@ -68,5 +68,5 @@ LABEL org.opencontainers.image.url="https://github.com/R3D347HR4Y/parse-mcp"
 LABEL org.opencontainers.image.documentation="https://github.com/R3D347HR4Y/parse-mcp#readme"
 LABEL org.opencontainers.image.vendor="Eliott Guillaumin"
 LABEL org.opencontainers.image.licenses="MIT"
-LABEL org.opencontainers.image.version="1.0.0"
+LABEL org.opencontainers.image.version="1.0.1"
 
